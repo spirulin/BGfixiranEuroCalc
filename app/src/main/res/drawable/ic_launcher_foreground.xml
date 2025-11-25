@@ -1,0 +1,66 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Символ Евро (€) - изместен леко наляво и нагоре, за да има място за флага -->
+    <group
+        android:translateX="-5"
+        android:translateY="-5">
+        
+        <!-- Основна форма 'C' -->
+        <path
+            android:fillColor="#FFD700"
+            android:pathData="M88,32 A38,38 0 1,0 88,76 L76,76 A26,26 0 1,1 76,32 Z" />
+        
+        <!-- Горна черта -->
+        <path
+            android:fillColor="#FFD700"
+            android:pathData="M18,46 H78 V52 H18 Z" />
+            
+        <!-- Долна черта -->
+        <path
+            android:fillColor="#FFD700"
+            android:pathData="M18,58 H78 V64 H18 Z" />
+    </group>
+
+    <!-- Български флаг (кръгъл бадж долу вдясно) -->
+    <group>
+        <!-- Бял фон (цял кръг) -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M82,82 m-22,0 a22,22 0 1,1 44,0 a22,22 0 1,1 -44,0" />
+            
+        <!-- Зелена лента (средна част) -->
+        <path
+            android:fillColor="#00966E"
+            android:pathData="M60.5,76 L103.5,76 A22,22 0 0,1 103.5,88 L60.5,88 A22,22 0 0,1 60.5,76 Z" /> 
+            <!-- Забележка: Това е опростено изрязване, за по-точна геометрия разчитаме, че иконата е малка -->
+            <!-- Нека го направим по-просто с правоъгълник, който ще стои добре върху белия кръг -->
+            
+         <!-- Поправка за флага: Използваме Rect върху Circle визуално -->
+         <!-- Тъй като vector drawable не поддържа лесно маскиране без clip-path, ще нарисувам лентите ръчно -->
+    </group>
+    
+    <!-- Пренаписване на флага за по-чист вид -->
+    <group android:translateX="82" android:translateY="82">
+        <!-- Бяла горна част (Circle background върши работа за бялото) -->
+        
+        <!-- Зелена средна част -->
+        <path
+            android:fillColor="#00966E"
+            android:pathData="M-21,-6 L21,-6 L21,6 L-21,6 Z" />
+            
+        <!-- Червена долна част -->
+        <path
+            android:fillColor="#D62612"
+            android:pathData="M-20,6 L20,6 A22,22 0 0,1 0,22 A22,22 0 0,1 -20,6 Z" />
+             
+        <!-- Бяла горна част (за да покрие горната крива) -->
+         <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M-20,-6 L20,-6 A22,22 0 0,0 0,-22 A22,22 0 0,0 -20,-6 Z" />
+    </group>
+
+</vector>
